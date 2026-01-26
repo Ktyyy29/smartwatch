@@ -1,0 +1,18 @@
+SET(SOURCES ui_Screen1.c
+    ui_setMenu.c
+    ui_setTime.c
+    ui_setDate.c
+    ui_setEmotion.c
+    ui.c
+    ui_comp_hook.c
+    ui_helpers.c
+    ui_events.c
+    ui_img_set_png.c
+    ui_img_bright_png.c
+    fonts/ui_font_date.c
+    fonts/ui_font_day.c
+    fonts/ui_font_digits.c
+    fonts/ui_font_Emotions.c
+    fonts/ui_font_secs.c)
+
+add_library(ui ${SOURCES})
