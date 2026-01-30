@@ -125,7 +125,7 @@ void ui_setDate_screen_init(void)
     lv_obj_set_align(ui_saveDate, LV_ALIGN_CENTER);
     lv_obj_clear_flag(ui_saveDate, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_radius(ui_saveDate, 4, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_bg_color(ui_saveDate, lv_color_hex(0x64144B), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_saveDate, lv_color_hex(0xE1109F), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_saveDate, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_border_width(ui_saveDate, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 

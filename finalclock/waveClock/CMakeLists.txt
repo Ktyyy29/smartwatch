@@ -7,12 +7,19 @@ SET(SOURCES ui_Screen1.c
     ui_comp_hook.c
     ui_helpers.c
     ui_events.c
+    ui_img_logo_png.c
     ui_img_set_png.c
     ui_img_bright_png.c
+    ui_img_angry_png.c
+    ui_img_disgust_png.c
+    ui_img_fear_png.c
+    ui_img_happy_png.c
+    ui_img_neutral_png.c
+    ui_img_sad_png.c
+    ui_img_idle_png.c
     fonts/ui_font_date.c
     fonts/ui_font_day.c
     fonts/ui_font_digits.c
-    fonts/ui_font_Emotions.c
     fonts/ui_font_secs.c)
 
 add_library(ui ${SOURCES})

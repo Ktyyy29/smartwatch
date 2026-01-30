@@ -176,34 +176,67 @@ void prepareEmotion(lv_event_t * e) {
     emotionRunning = !emotionRunning;
 
     if (emotionRunning) {
-        // Button is START (green)
+        // Button is STOP (red)
         lv_obj_set_style_bg_color(ui_Button7, lv_color_hex(0xFF0000), LV_PART_MAIN | LV_STATE_DEFAULT);
         lv_label_set_text(ui_Label37, "STOP");
 
         // Change label from IDLE to "Fetching..."
         lv_label_set_text(ui_Label36, "Fetching...");
+        lv_label_set_text(ui_Label39, "Fetching...");
 
         // Fetch emotion from server (mock or actual)
-        // For example, replace this with your HTTP GET request
         const char* emotions[] = {"Neutral", "Sad", "Happy", "Angry", "Disgust", "Fear"};
-        const char* emojis[] = {"😐", "😢", "😊", "😠", "🤢", "😱"};
+        
 
         // Example: randomly pick one for demonstration
         int idx = rand() % 6;
 
         lv_label_set_text(ui_Label36, emotions[idx]);
-        lv_label_set_text(ui_emojiLabel, emojis[idx]);
+        lv_label_set_text(ui_Label39, emotions[idx]);
+
+        // 🔹 Change images based on emotion
+        switch(idx) {
+            case 0: // Neutral
+                lv_img_set_src(ui_Image4, &ui_img_neutral_png);
+                lv_img_set_src(ui_Image5, &ui_img_neutral_png);
+                break;
+            case 1: // Sad
+                lv_img_set_src(ui_Image4, &ui_img_sad_png);
+                lv_img_set_src(ui_Image5, &ui_img_sad_png);
+                break;
+            case 2: // Happy
+                lv_img_set_src(ui_Image4, &ui_img_happy_png);
+                lv_img_set_src(ui_Image5, &ui_img_happy_png);
+                break;
+            case 3: // Angry
+                lv_img_set_src(ui_Image4, &ui_img_angry_png);
+                lv_img_set_src(ui_Image5, &ui_img_angry_png);
+                break;
+            case 4: // Disgust
+                lv_img_set_src(ui_Image4, &ui_img_disgust_png);
+                lv_img_set_src(ui_Image5, &ui_img_disgust_png);
+                break;
+            case 5: // Fear
+                lv_img_set_src(ui_Image4, &ui_img_fear_png);
+                lv_img_set_src(ui_Image5, &ui_img_fear_png);
+                break;
+        }
 
     } else {
-        // Button is STOP (red)
+        // Button is START (green)
         lv_obj_set_style_bg_color(ui_Button7, lv_color_hex(0x3B9750), LV_PART_MAIN | LV_STATE_DEFAULT);
         lv_label_set_text(ui_Label37, "START");
 
         // Reset label and emoji
         lv_label_set_text(ui_Label36, "IDLE");
-        lv_label_set_text(ui_emojiLabel, "");
+        lv_label_set_text(ui_Label39, "IDLE");
+
+        // 🔹 Reset images to default
+        lv_img_set_src(ui_Image4, &ui_img_idle_png);
+        lv_img_set_src(ui_Image5, &ui_img_idle_png);
     }
 }
+
 
 
 void loop() {

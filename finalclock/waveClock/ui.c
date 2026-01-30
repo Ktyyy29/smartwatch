@@ -8,7 +8,7 @@
 
 
 bool emotionRunning = false;
-lv_obj_t * ui_emojiLabel = NULL;
+
 ///////////////////// VARIABLES ////////////////////
 
 
@@ -70,6 +70,7 @@ lv_obj_t * ui_Label36;
 void ui_event_Button5(lv_event_t * e);
 lv_obj_t * ui_Button5;
 lv_obj_t * ui_Label35; 
+lv_obj_t * ui_Image5; 
 
 
 
@@ -91,6 +92,7 @@ void ui_setEmotion_screen_init(void);
 lv_obj_t * ui_setEmotion;
 lv_obj_t * ui_Label39;
 lv_obj_t * ui_Panel26;
+lv_obj_t * ui_Image4;
 void ui_event_Button7(lv_event_t * e);
 lv_obj_t * ui_Button7;
 lv_obj_t * ui_Label37;
@@ -381,6 +383,8 @@ void ui_event_Button8(lv_event_t * e)
         _ui_screen_change(&ui_Screen1, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Screen1_screen_init);
     }
 }
+
+
 
 ///////////////////// SCREENS ////////////////////
 

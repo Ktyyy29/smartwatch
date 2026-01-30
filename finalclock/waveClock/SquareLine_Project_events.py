@@ -1,5 +1,5 @@
 
-def choseTime(event_struct):
+def cngBright(event_struct):
     return
 
 
@@ -7,7 +7,7 @@ def prepareTime(event_struct):
     return
 
 
-def cngBright(event_struct):
+def choseTime(event_struct):
     return
 
 

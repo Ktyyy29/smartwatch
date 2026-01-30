@@ -82,10 +82,12 @@ extern lv_obj_t * ui_Label36;
 void ui_event_Button5(lv_event_t * e);
 extern lv_obj_t * ui_Button5;
 extern lv_obj_t * ui_Label35; 
+extern lv_obj_t * ui_Image5; 
+
 
 
 extern bool emotionRunning;
-extern lv_obj_t * ui_emojiLabel;
+
 
 void prepareEmotion(lv_event_t * e);
 // SCREEN: ui_setMenu
@@ -106,6 +108,7 @@ void ui_setEmotion_screen_init(void);
 extern lv_obj_t * ui_setEmotion;
 extern lv_obj_t * ui_Label39;
 extern lv_obj_t * ui_Panel26;
+extern lv_obj_t * ui_Image4;
 void ui_event_Button7(lv_event_t * e);
 extern lv_obj_t * ui_Button7;
 extern lv_obj_t * ui_Label37;
@@ -181,6 +184,15 @@ extern lv_obj_t * ui____initial_actions0;
 LV_IMG_DECLARE(ui_img_logo_png);    // assets\logo.png
 LV_IMG_DECLARE(ui_img_set_png);    // assets\set.png
 LV_IMG_DECLARE(ui_img_bright_png);    // assets\bright.png
+LV_IMG_DECLARE(ui_img_angry_png);    // assets\angry.png
+LV_IMG_DECLARE(ui_img_idle_png);    // assets\idle.png
+LV_IMG_DECLARE(ui_img_neutral_png);    // assets\neutral.png
+LV_IMG_DECLARE(ui_img_sad_png);    // assets\sad.png
+LV_IMG_DECLARE(ui_img_happy_png);    // assets\happy.png
+LV_IMG_DECLARE(ui_img_disgust_png);    // assets\disgust.png
+LV_IMG_DECLARE(ui_img_fear_png);    // assets\fear.png
+
+
 
 LV_FONT_DECLARE(ui_font_date);
 LV_FONT_DECLARE(ui_font_day);

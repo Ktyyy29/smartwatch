@@ -18,7 +18,7 @@ void ui_setEmotion_screen_init(void)
     ui_Button7 = lv_btn_create(ui_setEmotion);
     lv_obj_set_size(ui_Button7, 100, 50);
     lv_obj_set_align(ui_Button7, LV_ALIGN_CENTER);
-    lv_obj_set_x(ui_Button7, -8);
+    lv_obj_set_x(ui_Button7, 0);
     lv_obj_set_y(ui_Button7, -162);
     lv_obj_clear_flag(ui_Button7, LV_OBJ_FLAG_SCROLLABLE);
 
@@ -33,11 +33,15 @@ void ui_setEmotion_screen_init(void)
 
     /* ================= HOME BUTTON ================= */
     ui_Button8 = lv_btn_create(ui_setEmotion);
-    lv_obj_set_size(ui_Button8, 100, 50);
+    lv_obj_set_width(ui_Button8, 169);
+    lv_obj_set_height(ui_Button8, 58);
+    lv_obj_set_x(ui_Button8, 0);
+    lv_obj_set_y(ui_Button8, 149);
     lv_obj_set_align(ui_Button8, LV_ALIGN_CENTER);
-    lv_obj_set_x(ui_Button8, -11);
-    lv_obj_set_y(ui_Button8, 151);
-    lv_obj_clear_flag(ui_Button8, LV_OBJ_FLAG_SCROLLABLE);
+    lv_obj_add_flag(ui_Button8, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_Button8, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_Button8, lv_color_hex(0x292831), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Button8, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Label38 = lv_label_create(ui_Button8);
     lv_label_set_text(ui_Label38, "HOME");
@@ -47,30 +51,36 @@ void ui_setEmotion_screen_init(void)
     ui_Label39 = lv_label_create(ui_setEmotion);
     lv_label_set_text(ui_Label39, "IDLE");
     lv_obj_set_align(ui_Label39, LV_ALIGN_CENTER);
-    lv_obj_set_x(ui_Label39, -13);
+    lv_obj_set_x(ui_Label39, 0);
     lv_obj_set_y(ui_Label39, -66);
     lv_obj_set_style_text_font(ui_Label39, &lv_font_montserrat_28, LV_PART_MAIN);
 
     /* ================= EMOJI PANEL ================= */
     ui_Panel26 = lv_obj_create(ui_setEmotion);
-    lv_obj_set_size(ui_Panel26, 100, 76);
+    lv_obj_set_size(ui_Panel26, 126, 109);
     lv_obj_set_align(ui_Panel26, LV_ALIGN_CENTER);
-    lv_obj_set_x(ui_Panel26, -7);
+    lv_obj_set_x(ui_Panel26, 0);
     lv_obj_set_y(ui_Panel26, 12);
     lv_obj_clear_flag(ui_Panel26, LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_set_style_bg_color(ui_Panel26, lv_color_hex(0x000000), LV_PART_MAIN);
     lv_obj_set_style_bg_opa(ui_Panel26, 255, LV_PART_MAIN);
     lv_obj_set_style_radius(ui_Panel26, 12, LV_PART_MAIN);
 
-    /* ================= EMOJI LABEL (CENTERED) ================= */
-    ui_emojiLabel = lv_label_create(ui_Panel26);
-    lv_label_set_text(ui_emojiLabel, "");
-    lv_obj_center(ui_emojiLabel);
-    lv_obj_set_style_text_font(ui_emojiLabel, &lv_font_montserrat_28, LV_PART_MAIN);
-
     /* ================= EVENTS ================= */
     lv_obj_add_event_cb(ui_Button7, ui_event_Button7, LV_EVENT_CLICKED, NULL);
     lv_obj_add_event_cb(ui_Button8, ui_event_Button8, LV_EVENT_CLICKED, NULL);
+
+
+    ui_Image4 = lv_img_create(ui_setEmotion);
+    lv_img_set_src(ui_Image4, &ui_img_idle_png);
+    lv_obj_set_width(ui_Image4, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Image4, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Image4, 0);
+    lv_obj_set_y(ui_Image4, 12);
+    lv_obj_set_align(ui_Image4, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Image4, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    lv_obj_clear_flag(ui_Image4, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_img_set_zoom(ui_Image4, 235);
 }
 
 
